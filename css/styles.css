@@ -56,19 +56,30 @@ img {
 }
 
 .container {
-  width: 1158px;
+  width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
-  padding: 0 15px;
 }
 
-.section {
-  padding-top: 120px;
-  padding-bottom: 120px;
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1154px) {
+  .container {
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 }
 
 /* ========== HEADER ========== */
 
-.header-section {
+/* .header-section {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -172,13 +183,9 @@ img {
 .contacts-link:hover,
 .contacts-link:focus {
   color: #404bbf;
-}
+} */
 
-/* ========== HERO ========== */
-
-/* MODAL WINDOW */
-
-/* MODAL WINDOW */
+/* ============================== HERO HERO HERO HERO HERO HERO HERO ============================== */
 
 .hero,
 .footer {
@@ -188,28 +195,100 @@ img {
 .hero {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1440px;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  max-width: 320px;
+  padding-top: 72px;
+  padding-bottom: 72px;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero/people-office-1.jpg);
+    url(../images/hero/people-office-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+@media (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office-mobile@2x.jpg);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    max-width: 768px;
+    padding-top: 112px;
+    padding-bottom: 112px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office-tablet.jpg);
+  }
+
+  @media (min-resolition: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/people-office-tablet@2x.jpg);
+    }
+  }
+}
+
+@media (min-width: 1158px) {
+  .hero {
+    max-width: 1440px;
+    padding-top: 188px;
+    padding-bottom: 188px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/people-office-1.jpg);
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/people-office-desktop@2x.jpg);
+    }
+  }
+}
+
 .hero-title {
-  max-width: 496px;
-  margin: auto;
-  margin-bottom: 48px;
+  max-width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 72px;
   color: #fff;
   text-align: center;
-  font-size: 56px;
-  line-height: 1.07;
-  letter-spacing: 1.12px;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+    font-size: 56px;
+    line-height: 1.07;
+  }
+}
+
+@media (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 
 .hero-button {
@@ -224,7 +303,7 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.64px;
+  letter-spacing: 0.04em;
   background-color: #4d5ae5;
   border: none;
   border-radius: 4px;
@@ -237,52 +316,111 @@ img {
   cursor: pointer;
 }
 
-/* =========== BENEFITS SECTION ========== */
+/* ===================== BENEFITS SECTION BENEFITS BENEFITS BENEFITS==================== */
+
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
 
 .benefits-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
 
-.benefits-item {
-  width: calc((100% - 72px) / 4);
+@media (min-width: 768px) {
+  .benefits-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  .benefits-item {
+    width: calc((100% - 24px) / 2);
+  }
 }
 
-.container-for-benefits-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 112px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  border: 1px solid #8e8f99;
-  background: #f4f4fd;
+@media (min-width: 1158px) {
+  .benefits-list {
+    display: flex;
+    column-gap: 24px;
+  }
+
+  .benefits-item {
+    width: calc((100% - 72px) / 4);
+  }
 }
 
 .benefits-title {
   margin-bottom: 8px;
+  color: #2e2f42;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
 }
 
-.benefits-title,
-.team-list-title,
-.portfolio-item-title {
-  color: #2e2f42;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.4px;
+@media (min-width: 768px) {
+  .benefits-title {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1158px) {
+  .benefits-title {
+    color: #2e2f42;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }
 
 .benefits-text,
 .team-text,
 .portfolio-text {
-  line-height: 1.5;
+  font-weight: 500;
   letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
+
+@media (min-width: 1158px) {
+  .benefits-text,
+  .team-text,
+  .portfolio-text {
+font-size: 16px;
+font-weight: 400;
+}
+
+@media (min-width: 1158px) {
+  .container-for-benefits-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    background: #f4f4fd;
+  }  
+}
+
+
 
 /* ========== TEAM-SECTION ========== */
 
-.team-section {
+/* .team-section {
   background-color: #f4f4fd;
 }
 
@@ -360,11 +498,11 @@ img {
 .team-text {
   text-align: center;
   margin-bottom: 8px;
-}
+} */
 
 /* ========== PORTFOLIO-SECTION ========== */
 
-.portfolio-title {
+/* .portfolio-title {
   margin-bottom: 72px;
 }
 
@@ -394,10 +532,10 @@ img {
 
 .portfolio-item-title {
   margin-bottom: 8px;
-}
+} */
 
 /* ====OVERLAY STYLES==== */
-.image-container {
+/* .image-container {
   position: relative;
   overflow: hidden;
 }
@@ -420,13 +558,13 @@ img {
 
 .portfolio-item:hover .image-overlay-text {
   transform: translateY(0%);
-}
+} */
 
 /* ========== OVERLAY STYLES ========== */
 
 /* ========= FOOTER ========== */
 
-.footer {
+/* .footer {
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -478,11 +616,11 @@ img {
 .socials-link-footer:hover,
 .socials-link-footer:focus {
   background-color: #31d0aa;
-}
+} */
 
 /* ========== FOOTER-FORM ==========*/
 
-.subscribe-text {
+/* .subscribe-text {
   color: #fff;
   font-family: Roboto;
   font-size: 16px;
@@ -553,13 +691,13 @@ img {
 
 .subscribe-button-icon {
   fill: #fff;
-}
+} */
 
 /* ========== FOOTER-FORM ========== */
 
 /* ========== MODAL BOX FOR FORM ========== */
 
-.backdrop {
+/* .backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -594,11 +732,11 @@ img {
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* ============ CLOSE-BUTTON ============ */
 
-.close-button {
+/* .close-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -633,11 +771,11 @@ img {
 .close-button:hover .close-icon,
 .close-button:focus .close-icon {
   fill: #ffffff;
-}
+} */
 
 /* ========== FORM-DESCRIPTION ========== */
 
-.form-descr {
+/* .form-descr {
   color: #2e2f42;
   text-align: center;
   font-family: Roboto;
@@ -646,11 +784,11 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
-}
+} */
 
 /* ========== FORM ITSELF ========== */
 
-.container-for-label-and-input {
+/* .container-for-label-and-input {
   margin-bottom: 8px;
 }
 
@@ -726,11 +864,11 @@ img {
 .user-comment:hover,
 .user-comment:focus {
   border-color: #4d5ae5;
-}
+} */
 
 /* ========== RADIO ========== */
 
-.checkbox-container {
+/* .checkbox-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -756,11 +894,11 @@ img {
 
 .privacy-policy-link {
   color: #4d5ae5;
-}
+} */
 
 /* ============ BUTTON =========== */
 
-.main-form-submit-btn {
+/* .main-form-submit-btn {
   display: block;
   min-width: 169px;
   height: 56px;
@@ -783,4 +921,5 @@ img {
 .main-form-submit-btn:focus,
 .main-form-submit-btn:hover {
   background-color: #404BBF;
+} */
 }
