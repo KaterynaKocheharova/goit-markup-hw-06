@@ -387,7 +387,6 @@ img {
 }
 
 .benefits-text,
-.team-text,
 .portfolio-text {
   font-weight: 500;
   letter-spacing: 0.32px;
@@ -399,8 +398,9 @@ img {
   .benefits-text,
   .team-text,
   .portfolio-text {
-font-size: 16px;
-font-weight: 400;
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 @media (min-width: 1158px) {
@@ -413,14 +413,12 @@ font-weight: 400;
     border-radius: 4px;
     border: 1px solid #8e8f99;
     background: #f4f4fd;
-  }  
+  }
 }
 
+/* ================================= TEAM-SECTION =================================== */
 
-
-/* ========== TEAM-SECTION ========== */
-
-/* .team-section {
+.team-section {
   background-color: #f4f4fd;
 }
 
@@ -430,7 +428,7 @@ font-weight: 400;
   text-align: center;
   font-size: 36px;
   line-height: 1.11;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.02em;
   text-transform: capitalize;
 }
 
@@ -440,16 +438,42 @@ font-weight: 400;
 
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
+}
+
+@media (min-width: 768px) {
+  .team-list {
+    flex-direction: row;
+    column-gap: 24px;
+    row-gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  .team-card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 1158px) {
+  .team-list {
+    column-gap: 24px;
+    flex-wrap: no-wrap;
+  }
+  .team-card {
+    width: calc((100% - 74px) / 4);
+  }
 }
 
 .team-card {
-  width: calc((100% - 74px) / 4);
+  width: 264px;
   background-color: #fff;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .team-position-and-name {
@@ -491,6 +515,10 @@ font-weight: 400;
 }
 
 .team-list-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   text-align: center;
   margin-bottom: 8px;
 }
@@ -498,7 +526,9 @@ font-weight: 400;
 .team-text {
   text-align: center;
   margin-bottom: 8px;
-} */
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
 
 /* ========== PORTFOLIO-SECTION ========== */
 
@@ -562,24 +592,72 @@ font-weight: 400;
 
 /* ========== OVERLAY STYLES ========== */
 
-/* ========= FOOTER ========== */
+/* =============================================== FOOTER FOOOTER FOOTER ================================ */
 
-/* .footer {
-  padding-top: 100px;
-  padding-bottom: 100px;
+.footer {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (min-width: 1158px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 72px;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+    justify-content: flex-start;
+    padding-left: 108px;
+  }
+}
+
+@media (min-width: 1158px) {
+  .footer-container {
+    align-items: baseline;
+    justify-content: space-between;
+  }
 }
 
 .footer-descr {
-  width: 264px;
-  margin-right: 120px;
+  text-align: center;
 }
 
+@media (min-width: 768px) {
+  .footer-descr {
+    width: 264px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .socials-container {
+    width: 208px;
+    text-align: left;
+  }
+}
+
+
+
 .footer-logo {
+  color: #4d5ae5;
+  font-family: Raleway;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   display: inline-block;
   margin-bottom: 16px;
 }
@@ -589,18 +667,15 @@ font-weight: 400;
 }
 
 .footer-text {
-  max-width: 264px;
+  text-align: left;
   color: #f4f4fd;
   line-height: 1.5;
   letter-spacing: 0.32px;
 }
 
-.socials-container {
-  margin-right: 80px;
-}
-
 .socials-title {
   margin-bottom: 16px;
+  text-align: center;
   color: #fff;
   font-family: Roboto;
   font-weight: 500;
@@ -608,19 +683,43 @@ font-weight: 400;
   letter-spacing: 0.02em;
 }
 
+@media (min-width: 768px) {
+  .socials-title {
+    text-align: left;
+  }
+}
+
 .social-icons-list-footer {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
+
 
 .socials-link-footer:hover,
 .socials-link-footer:focus {
   background-color: #31d0aa;
+} 
+
+
+
+/* .footer-descr {
+  width: 264px;
+  margin-right: 120px;
+}
+
+
+.socials-container {
+  margin-right: 80px;
+}
+
+/* .footer-container {
+  display: flex;
+
 } */
 
-/* ========== FOOTER-FORM ==========*/
-
-/* .subscribe-text {
+.subscribe-text {
+  text-align: center;
   color: #fff;
   font-family: Roboto;
   font-size: 16px;
@@ -630,19 +729,24 @@ font-weight: 400;
   margin-bottom: 16px;
 }
 
-.footer-form {
-  display: flex;
-  gap: 24px;
+@media (min-width: 768px) {
+  .subscribe-text {
+    text-align: left;
+  }
 }
 
-.footer-input-label {
-  display: flex;
+@media (min-width: 768px) {
+  .footer-form {
+    display: flex;
+    gap: 24px;
+  }
 }
 
 .footer-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   padding: 8px 16px;
+  margin-bottom: 16px;
   color: #fff;
   font-family: Roboto;
   font-size: 12px;
@@ -652,14 +756,20 @@ font-weight: 400;
   border-radius: 4px;
   border: 1px solid #fff;
   background-color: transparent;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); 
+  opacity: 0.3;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .footer-input {
+    width: 264px;
+  }
 }
 
 .footer-input::placeholder {
   color: #fff;
   font-family: Roboto;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: 2;
   letter-spacing: 0.04em;
@@ -671,6 +781,8 @@ font-weight: 400;
   align-items: center;
   min-width: 165px;
   height: 40px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 8px 24px;
   color: #fff;
   text-align: center;
@@ -691,9 +803,27 @@ font-weight: 400;
 
 .subscribe-button-icon {
   fill: #fff;
-} */
+}
 
-/* ========== FOOTER-FORM ========== */
+.footer-input-label {
+  display: flex;
+}
+
+.footer-input {
+  width: 264px;
+  height: 40px;
+  padding: 8px 16px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
 
 /* ========== MODAL BOX FOR FORM ========== */
 
@@ -922,4 +1052,3 @@ font-weight: 400;
 .main-form-submit-btn:hover {
   background-color: #404BBF;
 } */
-}
