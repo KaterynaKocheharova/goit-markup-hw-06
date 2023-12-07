@@ -1,4 +1,4 @@
-/* ========== GENERAL STYLES ========== */
+/* ============================================ GENERAL STYLES =============================================== */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
@@ -29,8 +29,6 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-/* ========== GENERAL POSITIONING STYLES ========== */
 
 h1,
 h2,
@@ -74,35 +72,36 @@ img {
   }
 }
 
-/* ========== HEADER ========== */
+/* ================================================== HEADER ============================================ */
 
-/* .header-section {
+.header-section {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
+.main-nav {
+  position: relative;
 }
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+@media (max-width: 767px) {
+  .nav-list,
+  .contacts {
+    display: none;
+  }
 }
 
 .logo {
   display: inline-block;
-  margin-right: 76px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   color: #4d5ae5;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.17;
-  letter-spacing: 0.54px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -110,77 +109,215 @@ img {
   color: #2e2f42;
 }
 
-.nav-list {
-  display: flex;
-  gap: 40px;
-}
-
-.nav-list-item {
-  width: calc((100% - 80px) / 3);
-}
-
-.nav-list-item:first-child .nav-link {
-  position: relative;
-  color: #404bbf;
-}
-
-.nav-link {
-  display: flex;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  color: #2e2f42;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.32px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-list-item:first-child .nav-link::after {
+.mobile-menu-svg {
   position: absolute;
-  left: 0;
-  bottom: -1px;
-  content: '';
-  width: 48px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
+  top: 16px;
+  right: 0;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+/* ============================================ HEADER TABLET STYLES ==================================== */
+
+@media (min-width: 768px) {
+  .mobile-menu-svg {
+    display: none;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 120px;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+
+  .nav-list-item {
+    width: calc((100% - 80px) / 3);
+  }
+
+  .nav-list-item:first-child .nav-link {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .nav-link {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    color: #2e2f42;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-list-item:first-child .nav-link::after {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    content: '';
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #404bbf;
+  }
+
+  .contacts {
+    font-style: normal;
+  }
+
+  .contacts-link {
+    display: block;
+    color: #434455;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17px;
+    letter-spacing: 0.04em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contacts-link:hover,
+  .contacts-link:focus {
+    color: #404bbf;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+
+  .contacts-item-1 {
+    padding-top: 16px;
+    padding-bottom: 6px;
+  }
+
+  .contacts-item-2 {
+    padding-top: 6px;
+    padding-bottom: 16px;
+  }
+}
+
+/* ===================================== HEADER DESKTOP STYLES ======================================== */
+
+@media (min-width: 1158px) {
+
+  .logo {
+    margin-right: 76px;
+  }
+
+  .contacts-list {
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+  }
+
+  .contacts-item {
+    width: calc((100% - 40) / 2);
+  }
+
+
+  .contacts-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+/* ============================================== MOBILE MENU ============================================ */
+
+.mobile-menu-modal-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 72px 24px 40px 16px;
+  background-color: #fff;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-modal-box.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-close-button {
+  background-color: transparent;
+  fill: #2E2F42;
+}
+
+.mobile-menu-modal-box-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 168px;
+}
+
+.mobile-menu-modal-box-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.mobile-menu-modal-box-link:hover,
+.mobile-menu-modal-box-link:focus {
   color: #404bbf;
 }
 
-.contacts {
-  font-style: normal;
+.mobile-menu-modal-box-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
-.contacts-list {
+.mobile-menu-modal-box-contacts-link {
+  color: #434455;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.mobile-menu-modal-box-contacts-link:hover,
+.mobile-menu-modal-box-contacts-link:focus {
+  color: #4d5ae5;
+}
+
+.mobile-menu-social-icons-list {
   display: flex;
   gap: 40px;
 }
-
-.contacts-item {
-  width: calc((100% - 40) / 2);
-}
-
-.contacts-link {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  color: #434455;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.32px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts-link:hover,
-.contacts-link:focus {
-  color: #404bbf;
-} */
 
 /* ============================== HERO HERO HERO HERO HERO HERO HERO ============================== */
 
@@ -313,7 +450,7 @@ img {
   cursor: pointer;
 }
 
-/* ===================== BENEFITS SECTION BENEFITS BENEFITS BENEFITS==================== */
+/* ================================ BENEFITS SECTION BENEFITS BENEFITS BENEFITS ============================== */
 
 .section {
   padding-top: 96px;
@@ -330,7 +467,7 @@ img {
 .benefits-list {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  row-gap: 72px;
 }
 
 @media (min-width: 768px) {
@@ -338,7 +475,6 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 24px;
-    row-gap: 72px;
   }
 
   .benefits-item {
@@ -413,7 +549,7 @@ img {
   }
 }
 
-/* ================================= TEAM-SECTION =================================== */
+/* ============================================== TEAM-SECTION =============================================== */
 
 .team-section {
   background-color: #f4f4fd;
@@ -783,7 +919,6 @@ img {
   border-radius: 4px;
   border: 1px solid #fff;
   background-color: transparent;
-  opacity: 0.3;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -800,6 +935,12 @@ img {
   font-weight: 400;
   line-height: 2;
   letter-spacing: 0.04em;
+}
+
+@media (min-width: 1158px) {
+  .footer-input {
+    opacity: 1;
+  }
 }
 
 .subscribe-button {
@@ -833,7 +974,7 @@ img {
   display: flex;
 }
 
-/* ========== MODAL BOX FOR FORM ========== */
+/* ==================================================== MODAL BOX FOR FORM ================================= */
 
 /* .backdrop {
   position: fixed;
@@ -872,9 +1013,8 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
 } */
 
-/* ============ CLOSE-BUTTON ============ */
 
-/* .close-button {
+.close-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -886,11 +1026,13 @@ img {
   align-items: center;
   padding: 0;
   cursor: pointer;
-  background-color: #e7e9fc;
+  /* background-color: #e7e9fc; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* 
 
 .close-button:hover,
 .close-button:focus {
@@ -911,8 +1053,6 @@ img {
   fill: #ffffff;
 } */
 
-/* ========== FORM-DESCRIPTION ========== */
-
 /* .form-descr {
   color: #2e2f42;
   text-align: center;
@@ -923,8 +1063,6 @@ img {
   letter-spacing: 0.02em;
   margin-bottom: 16px;
 } */
-
-/* ========== FORM ITSELF ========== */
 
 /* .container-for-label-and-input {
   margin-bottom: 8px;
@@ -1004,8 +1142,6 @@ img {
   border-color: #4d5ae5;
 } */
 
-/* ========== RADIO ========== */
-
 /* .checkbox-container {
   display: inline-flex;
   align-items: center;
@@ -1033,8 +1169,6 @@ img {
 .privacy-policy-link {
   color: #4d5ae5;
 } */
-
-/* ============ BUTTON =========== */
 
 /* .main-form-submit-btn {
   display: block;
