@@ -6,7 +6,7 @@
       name="description"
       content="This webpage is about our Webstudio and our services that help you suceed in your business"
     />
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webstudio</title>
     <link
       rel="stylesheet"
@@ -20,18 +20,13 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-    <!-- =================================== HEADER HEADER HEADER ============================================= -->
+  <!-- ========================================  HEADER ======================================== -->
     <header class="header-section">
       <div class="container header-container">
         <nav class="main-nav">
           <a class="logo" href="./index.html">
             Web<span class="logo-accent">Studio</span></a
           >
-          <a href="">
-            <svg class="mobile-menu-svg" width="24" height="24">
-              <use href="./images/icons.svg#icon-mobile-menu"></use>
-            </svg>
-          </a>
           <ul class="nav-list">
             <li class="nav-list-item">
               <a class="nav-link" href="./index.html">Studio</a>
@@ -58,17 +53,22 @@
             </li>
           </ul>
         </address>
+        <button class="burger-button">
+          <svg class="mobile-menu-svg" width="24" height="24">
+            <use href="./images/icons.svg#icon-mobile-menu"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
-      <!-- ================================================ HERO HERO HERO ================================== -->
+      <!-- ========================================== HERO ========================================= -->
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
           <button class="hero-button" type="button">Order Service</button>
         </div>
       </section>
-      <!-- ========================================== BENEFITS BENEFITS BENEFITS ============================ -->
+      <!-- ========================================== BENEFITS ===================================== -->
       <section class="section">
         <div class="container">
           <h2 class="visually-hidden">Benefits</h2>
@@ -124,7 +124,7 @@
           </ul>
         </div>
       </section> 
-      <!-- ================================ TEAM TEAM TEAM TEAM TEAM TEAM TEAM =============================== -->
+      <!-- ================================ TEAM =============================== -->
       <section class="section team-section">
         <div class="container">
           <h2 class="team-title">Our Team</h2>
@@ -304,13 +304,13 @@
           </ul>
         </div>
       </section>
-      <!-- ======================================= PORTFOLIO PORTFOLIO PORTFOLIO =========================== -->
+      <!-- ======================================= PORTFOLIO ============================================= -->
       <section class="section" id="portfolio">
         <div class="container">
           <h2 class="portfolio-title">Our Portfolio</h2>
           <ul class="portfolio-list">
             <li class="portfolio-item">
-              <!-- ================================== OVERLAY STYLES ==================================== -->
+              <!-- =============================== OVERLAY =============================================== -->
               <div class="image-container">
                 <picture>
                   <source srcset="
@@ -515,7 +515,7 @@
         </div>
       </section>
     </main>
-    <!--======================================== FOOTER FOOTER FOOTER ======================================= -->
+    <!--======================================== FOOTER ======================================= -->
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-descr">
@@ -582,8 +582,8 @@
         </div>
       </div>
     </footer>
-    <!-- ================================================== MODAL BOX FOR FORM================================== -->
-   <div class="backdrop">
+    <!-- ================================== MODAL BOX FOR FORM ================================== -->
+  <div class="backdrop">
       <div class="modal-box-for-form">
         <button class="close-button" type="button">
           <svg class="close-icon" width="8" height="8">
@@ -591,8 +591,7 @@
           </svg>
         </button>
         <p class="form-descr">Leave your contacts and we will call you back</p> 
-        <!-- ========== FORM-ITSELF ========== -->
-         <form class="main-form">
+        <form class="main-form">
           <div class="container-for-label-and-input">
             <label for="user-name" class="input-label">Name</label>
             <div class="container-for-input-and-svg">
@@ -668,17 +667,18 @@
               </span>
               <span>
               I accept the terms and conditions of the
-              <a class="privacy-policy-link" href="">Privacy Policy</a></label
-            >
+              <a class="privacy-policy-link" href="">Privacy Policy</a>
             </span>
+            </label>
           </div>
           <button class="main-form-submit-btn" type="submit">Send</button>
         </form>
       </div>
     </div> 
-    <!-- ================================================ MODAL BOX FOR MOBILE MENU ========================== -->
+    <!-- ==================================== MODAL BOX FOR MOBILE MENU ================================= -->
       <div class="mobile-menu-modal-box">
-        <button class="close-button mobile-menu-close-button" type="button">
+        <div class="container menu-modal-box-container">
+        <button class="mobile-menu-close-button" type="button">
           <svg class="close-icon" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
@@ -724,6 +724,7 @@
             </li>
           </ul>
         </address>
+      </div>
       </div>
   </body>
 </html>
