@@ -251,7 +251,6 @@ img {
 
 /* ============================================== MOBILE MENU ============================================ */
 
-@media screen and (max-width: 767px) {
   .mobile-menu-modal-box {
     position: fixed;
     width: 100%;
@@ -349,7 +348,6 @@ img {
   .social-icons-item {
     flex-shrink: 0;
   }
-}
 
 @media screen and (min-width: 768px) {
   .mobile-menu-modal-box {
