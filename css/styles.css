@@ -840,6 +840,7 @@ img {
     align-items: baseline;
     justify-content: space-between;
     gap: unset;
+    padding-left: 15px;
   }
 }
 
